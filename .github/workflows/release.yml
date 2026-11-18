@@ -1,12 +1,12 @@
 # Compile Nyx Terminal pour Windows sur les serveurs de GitHub.
 #
-# - tag « v* » (ex. v0.4.0)  -> Release GitHub avec les .exe et leurs empreintes SHA-256
+# - n'importe quel tag (ex. v0.4.0 ou 0.4.0) -> Release GitHub avec les .exe et leurs empreintes SHA-256
 # - bouton « Run workflow »  -> compile sans publier (les .exe sont dans les artefacts du run)
 name: Release
 
 on:
   push:
-    tags: ['v*']
+    tags: ['*']
   workflow_dispatch:
 
 permissions:

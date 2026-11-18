@@ -54,7 +54,7 @@ const DEFAULT_SETTINGS = {
   quakeHideOnBlur: true,
   importSshConfig: true,          // ajoute les hôtes de ~/.ssh/config au menu Serveurs
 
-  // { "id": "nas", "name": "NAS", "host": "192.168.1.10", "user": "moi", "port": 22, "identityFile": "", "icon": "🗄", "color": "#22d3ee" }
+  // { "id": "nas", "name": "NAS", "host": "serveur.exemple.com", "user": "admin", "port": 22, "identityFile": "", "icon": "🗄", "color": "#22d3ee" }
   servers: [],
   // { "id": "python", "name": "Python", "icon": "🐍", "color": "#ffd43b", "command": "python.exe", "args": [], "cwd": "C:\\dev" }
   profiles: []

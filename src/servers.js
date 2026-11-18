@@ -32,11 +32,11 @@ function openServerModal(serverId = null) {
     </div>
     <div class="m-grid">
       <label class="f full"><span>Nom</span><input class="input" name="name" placeholder="Mon NAS" spellcheck="false"></label>
-      <label class="f wide"><span>Hôte</span><input class="input" name="host" placeholder="192.168.1.10 ou moi@serveur:2222" spellcheck="false" required></label>
+      <label class="f wide"><span>Hôte</span><input class="input" name="host" placeholder="serveur.exemple.com ou admin@serveur:2222" spellcheck="false" required></label>
       <label class="f"><span>Port</span><input class="input" name="port" type="number" min="1" max="65535"></label>
       <label class="f full"><span>Utilisateur</span><input class="input" name="user" placeholder="${escapeHtml('root')}" spellcheck="false"></label>
       <label class="f full"><span>Clé privée <small>(facultatif)</small></span>
-        <span class="f-inline"><input class="input" name="identityFile" placeholder="C:\\Users\\moi\\.ssh\\id_ed25519" spellcheck="false"><button type="button" class="btn ghost" data-act="browse">Parcourir…</button></span>
+        <span class="f-inline"><input class="input" name="identityFile" placeholder="%USERPROFILE%\\.ssh\\id_ed25519" spellcheck="false"><button type="button" class="btn ghost" data-act="browse">Parcourir…</button></span>
       </label>
       <div class="f full"><span>Icône</span><div class="pick icons"></div></div>
       <div class="f full"><span>Couleur</span><div class="pick colors"></div></div>
@@ -83,7 +83,7 @@ function openServerModal(serverId = null) {
     modalEl.querySelector('.m-cmd').textContent = `ssh ${s.port !== 22 ? `-p ${s.port} ` : ''}${s.identityFile ? `-i "${s.identityFile}" ` : ''}${target}`;
   }
 
-  // « moi@serveur:2222 » dans le champ Hôte -> remplit utilisateur et port
+  // « admin@serveur:2222 » dans le champ Hôte -> remplit utilisateur et port
   field('host').addEventListener('blur', () => {
     const m = field('host').value.trim().match(/^(?:([^@\s]+)@)?([^:\s]+)(?::(\d+))?$/);
     if (!m) return;

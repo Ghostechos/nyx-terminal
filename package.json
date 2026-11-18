@@ -4,7 +4,7 @@
   "version": "0.4.0",
   "description": "Un terminal moderne pour Windows (Electron + xterm.js + ConPTY)",
   "main": "main.js",
-  "author": "Ghosty",
+  "author": "PIYAS (alias Ghosty)",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
@@ -28,7 +28,7 @@
   "build": {
     "appId": "com.nyx.terminal",
     "productName": "Nyx Terminal",
-    "copyright": "Copyright © 2026 Ghosty — MIT",
+    "copyright": "Copyright © 2026 PIYAS (alias Ghosty) — MIT",
     "directories": {
       "output": "dist",
       "buildResources": "build"
