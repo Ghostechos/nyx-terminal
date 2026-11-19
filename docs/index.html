@@ -44,7 +44,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; height: auto; display: block; }
     ::selection { background: rgba(167, 139, 250, .35); }
 
     /* ---------- Ciel étoilé ---------- */
@@ -148,7 +148,7 @@
       box-shadow: 0 40px 120px -30px rgba(124, 58, 237, .55), 0 20px 60px -20px rgba(0,0,0,.8);
       animation: float 8s ease-in-out infinite;
     }
-    .window img { border-radius: 15px; width: 100%; }
+    .window img { border-radius: 15px; width: 100%; height: auto; }
     .window::after {
       content: ''; position: absolute; inset: auto 10% -40px; height: 80px;
       background: radial-gradient(closest-side, rgba(167,139,250,.45), transparent);
@@ -230,7 +230,7 @@
       transition: transform .5s var(--ease);
     }
     .shot:hover { transform: scale(1.015); }
-    .shot img { border-radius: 13px; width: 100%; }
+    .shot img { border-radius: 13px; width: 100%; height: auto; }
     kbd {
       display: inline-block; padding: 1px 7px;
       border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 6px;
@@ -404,7 +404,7 @@
       <p class="cta-note" id="cta-note"><span>Installeur ou version portable</span> · <span>Windows 10 / 11 (64 bits)</span> · <span>Licence MIT</span></p>
 
       <div class="window reveal">
-        <img src="assets/hero.webp" width="1280" height="800" alt="Nyx Terminal avec trois panneaux : une compilation réussie, des tests en échec signalés en rouge, et un historique git" data-zoom>
+        <img src="assets/hero.webp" width="2560" height="1600" alt="Nyx Terminal avec trois panneaux : une compilation réussie, des tests en échec signalés en rouge, et un historique git" data-zoom>
       </div>
 
       <div class="stats reveal">
@@ -505,7 +505,7 @@
             <li>Toutes les actions de l'application au même endroit</li>
           </ul>
         </div>
-        <div class="shot"><img src="assets/palette.webp" width="1280" height="800" loading="lazy" alt="Palette de commandes affichant la liste des thèmes avec leurs couleurs" data-zoom></div>
+        <div class="shot"><img src="assets/palette.webp" width="2560" height="1600" loading="lazy" alt="Palette de commandes affichant la liste des thèmes avec leurs couleurs" data-zoom></div>
       </div>
 
       <div class="show flip reveal">
@@ -519,7 +519,7 @@
             <li>Thèmes perso enregistrés, à côté des thèmes fournis</li>
           </ul>
         </div>
-        <div class="shot"><img src="assets/editor.webp" width="1280" height="800" loading="lazy" alt="Éditeur de thème ouvert sur le côté avec les sélecteurs de couleurs" data-zoom></div>
+        <div class="shot"><img src="assets/editor.webp" width="2560" height="1600" loading="lazy" alt="Éditeur de thème ouvert sur le côté avec les sélecteurs de couleurs" data-zoom></div>
       </div>
 
       <div class="show reveal">
@@ -533,7 +533,7 @@
             <li>Police, taille, interligne et curseur réglables</li>
           </ul>
         </div>
-        <div class="shot"><img src="assets/background.webp" width="1280" height="800" loading="lazy" alt="Terminal avec un fond dégradé bleu-violet et le panneau de choix du fond" data-zoom></div>
+        <div class="shot"><img src="assets/background.webp" width="2560" height="1600" loading="lazy" alt="Terminal avec un fond dégradé bleu-violet et le panneau de choix du fond" data-zoom></div>
       </div>
 
       <div class="show flip reveal">
@@ -547,7 +547,7 @@
             <li>« Diviser avec… » pour ouvrir un serveur à côté de ton shell</li>
           </ul>
         </div>
-        <div class="shot"><img src="assets/ssh.webp" width="1280" height="800" loading="lazy" alt="Fenêtre d'ajout d'un serveur SSH avec choix de l'icône et de la couleur" data-zoom></div>
+        <div class="shot"><img src="assets/ssh.webp" width="2560" height="1600" loading="lazy" alt="Fenêtre d'ajout d'un serveur SSH avec choix de l'icône et de la couleur" data-zoom></div>
       </div>
 
       <div class="show reveal">
@@ -560,7 +560,7 @@
             <li>Hauteur réglable</li>
           </ul>
         </div>
-        <div class="shot"><img src="assets/quake.webp" width="1600" height="450" loading="lazy" alt="Terminal Quake en haut de l'écran" data-zoom></div>
+        <div class="shot"><img src="assets/quake.webp" width="3200" height="900" loading="lazy" alt="Terminal Quake en haut de l'écran" data-zoom></div>
       </div>
     </div>
   </section>
