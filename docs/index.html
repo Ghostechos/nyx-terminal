@@ -126,6 +126,10 @@
     }
     .window img { border-radius: 8px; width: 100%; cursor: zoom-in; }
 
+    /* ---------- Vidéo ---------- */
+    .video-frame { margin-top: 48px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--bg-deep); padding: 8px; }
+    .video-frame video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; background: var(--bg-deep); }
+
     /* ---------- Chiffres ---------- */
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; border-top: 1px solid var(--line); }
     .stat { padding: 24px 24px 0 0; }
@@ -278,6 +282,7 @@
       .hero { padding-top: 56px; }
       .hero-head { grid-template-columns: 1fr; gap: 24px; }
       .window { margin-top: 40px; padding: 4px; border-radius: 12px; }
+      .video-frame { margin-top: 32px; padding: 4px; border-radius: 12px; }
       .features { grid-template-columns: 1fr 1fr; }
       .feat, .feat.wide { grid-column: span 1; }
       .show, .show.flip { grid-template-columns: 1fr; gap: 24px; margin-top: 64px; }
@@ -312,6 +317,7 @@
     <div class="wrap">
       <a class="logo" href="#"><svg><use href="#moon"/></svg>Nyx Terminal</a>
       <div class="nav-links" id="nav-links">
+        <a href="#video">Vidéo</a>
         <a href="#fonctionnalites">Fonctionnalités</a>
         <a href="#captures">Captures</a>
         <a href="#installation">Installation</a>
@@ -362,6 +368,21 @@
       </div>
     </div>
   </header>
+
+  <!-- ================= VIDÉO ================= -->
+  <section id="video">
+    <div class="wrap">
+      <span class="kicker">Vidéo</span>
+      <h2>Nyx en 30 secondes</h2>
+      <p class="section-lead">Blocs de commandes, panneaux divisés, palette, serveurs SSH, éditeur de thème et mode Quake.</p>
+      <div class="video-frame">
+        <video autoplay muted loop playsinline controls preload="metadata" poster="assets/nyx-terminal-poster.jpg" width="1920" height="1080" aria-label="Présentation de Nyx Terminal en vidéo">
+          <source src="assets/nyx-terminal.webm" type="video/webm">
+          <source src="assets/nyx-terminal.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= FONCTIONNALITÉS ================= -->
   <section id="fonctionnalites">
