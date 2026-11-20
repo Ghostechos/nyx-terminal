@@ -1,64 +1,53 @@
 # Nyx Terminal
 
-Terminal moderne et open source pour Windows : **Electron + xterm.js (rendu WebGL) + node-pty (ConPTY)**.
+**Tous tes shells Windows dans une seule fenêtre.** PowerShell, CMD, WSL, Git Bash et tes serveurs SSH, côte à côte : divise l'écran, vois d'un coup d'œil quelle commande a réussi ou échoué, et règle chaque couleur à ton goût.
 
-**[🌙 Site officiel](https://ghostechos.github.io/nyx-terminal/)** · [Télécharger](../../releases/latest) · [Licence MIT](LICENSE)
+[Site officiel](https://ghostechos.github.io/nyx-terminal/) · [Vidéo de présentation](https://ghostechos.github.io/nyx-terminal/#video) · [Télécharger](../../releases/latest) · [Licence MIT](LICENSE)
 
-![Nyx Terminal](docs/assets/hero.webp)
+[![Nyx Terminal avec trois panneaux : une compilation réussie, des tests en échec et un historique git](docs/assets/hero.webp)](https://ghostechos.github.io/nyx-terminal/#video)
+
+Gratuit et open source, pour Windows 10 et 11 (64 bits).
 
 ## Télécharger
 
-Va dans **[Releases](../../releases/latest)** et prends :
-- `NyxTerminal-Setup-x.y.z.exe` : installeur (raccourcis Bureau et menu Démarrer, désinstallation dans les Paramètres Windows)
-- `NyxTerminal-Portable-x.y.z.exe` : un seul fichier, sans installation
+Dans **[Releases](../../releases/latest)**, prends :
 
-Les .exe sont compilés **uniquement par GitHub Actions** à partir du code de ce dépôt ([voir le workflow](.github/workflows/release.yml)), jamais sur un PC personnel.
+- `NyxTerminal-Setup-x.y.z.exe` : l'installeur (raccourcis sur le Bureau et dans le menu Démarrer, désinstallation depuis les Paramètres Windows) ;
+- `NyxTerminal-Portable-x.y.z.exe` : un seul fichier, sans installation.
 
-**Vérifier un téléchargement** : compare l'empreinte avec le fichier `SHA256SUMS.txt` de la Release.
+**Vérifier un téléchargement** : compare son empreinte avec le fichier `SHA256SUMS.txt` de la version.
 
 ```powershell
 Get-FileHash .\NyxTerminal-Setup-0.4.0.exe -Algorithm SHA256
 ```
 
-> **Avertissement SmartScreen** : les .exe ne sont pas signés numériquement, donc Windows peut afficher « Windows a protégé votre ordinateur ». Clique sur **Informations complémentaires**, puis **Exécuter quand même**. Ce message ne signifie pas que le fichier est dangereux, seulement que l'éditeur n'est pas encore connu de Windows.
-
-## Confidentialité
-
-This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
-
-Nyx Terminal ne collecte aucune donnée et n'envoie rien sur Internet de lui-même : les seules connexions sont celles que tu lances depuis le terminal (ssh, git…) et les liens que tu ouvres avec Ctrl+clic.
+> **« Windows a protégé votre ordinateur » ?** Les .exe ne sont pas encore signés numériquement, donc Windows ne connaît pas leur éditeur. Clique sur **Informations complémentaires**, puis **Exécuter quand même**. Ça ne veut pas dire que le fichier est dangereux.
 
 ## Fonctionnalités
 
-**Travail**
-- **Onglets et panneaux divisés** : plusieurs terminaux côte à côte ou empilés dans un onglet, redimensionnables à la souris (double-clic sur le séparateur pour revenir à 50/50), agrandissement temporaire d'un panneau
-- **Blocs de commandes** façon Warp : barre colorée à gauche de chaque commande (vert = réussie, rouge = échec, animée = en cours). Au survol : code de sortie, durée, copier la commande, copier la sortie, relancer
-- **Dossier courant** affiché dans la barre d'état (clic = ouvrir dans l'Explorateur) ; nouveaux onglets et panneaux ouverts au même endroit
-- **Serveurs SSH** enregistrés avec icône et couleur, plus import automatique de `~/.ssh/config`
-- **Restauration de session** : onglets, panneaux, dossiers, taille et position de la fenêtre
-- **Terminal Quake** : une touche globale (F12 par défaut) fait descendre un terminal depuis le haut de l'écran
-- **Notifications Windows** quand une commande de plus de 10 s se termine alors que tu es ailleurs, plus un point vert ou rouge sur l'onglet
+**Pour travailler**
 
-**Apparence**
-- 10 thèmes + **éditeur de thème visuel** (aperçu en direct, bouton 🎲 aléatoire, thèmes perso enregistrés)
-- **Fond d'écran** : image (flou et visibilité réglables) ou 8 dégradés
-- **Ligatures** (`=>`, `!=`, `->`…) avec Cascadia Code, Fira Code ou JetBrains Mono
-- Interface animée, halo coloré, palette de commandes (Ctrl+Shift+P)
+- **Blocs de commandes** : chaque commande et son résultat forment un bloc, avec une barre verte si elle réussit, rouge si elle échoue, animée pendant qu'elle tourne. Au survol : code de sortie, durée, copier la commande ou la sortie, relancer.
+- **Onglets et panneaux divisés** : plusieurs terminaux côte à côte ou empilés dans un même onglet, redimensionnables à la souris (double-clic sur le séparateur pour revenir à 50/50), agrandissement temporaire d'un panneau.
+- **Serveurs SSH** enregistrés avec une icône et une couleur, et import automatique de `~/.ssh/config`.
+- **Mode Quake** : une touche globale (F12 par défaut) fait descendre un terminal depuis le haut de l'écran.
+- **Dossier courant** dans la barre d'état (un clic l'ouvre dans l'Explorateur) ; les nouveaux onglets et panneaux s'ouvrent au même endroit.
+- **Session restaurée** : onglets, panneaux, dossiers, taille et position de la fenêtre.
+- **Notifications Windows** quand une commande de plus de 10 s se termine pendant que tu es ailleurs, plus un point vert ou rouge sur l'onglet.
+- **Palette de commandes** (Ctrl+Shift+P) : toutes les actions au même endroit, avec recherche même sans accents.
 
-## Démarrage (sous Windows)
+**Pour l'apparence**
 
-Prérequis : **Node.js 20+**.
+- **11 thèmes** (Nyx, Aurora, Tokyo Night, Catppuccin, Dracula, Synthwave '84, Rosé Pine, Nord, Gruvbox, One Dark…) et un **éditeur de thème** avec aperçu en direct, tirage de palette au hasard et thèmes perso enregistrés.
+- **Fond d'écran** : ta propre image (flou et visibilité réglables) ou l'un des 8 dégradés.
+- **Ligatures** (`=>`, `!=`, `->`…) avec Cascadia Code, Fira Code ou JetBrains Mono.
+- Halo coloré animé, désactivable.
 
-```powershell
-npm install
-npm start
-```
-
-## Créer le .exe
-
-```powershell
-npm run dist            # installeur + .exe portable dans dist/
-```
+| Palette de commandes | Éditeur de thème |
+|---|---|
+| ![Palette de commandes affichant la liste des thèmes](docs/assets/palette.webp) | ![Éditeur de thème ouvert sur le côté](docs/assets/editor.webp) |
+| **Serveurs SSH** | **Fond d'écran** |
+| ![Fenêtre d'ajout d'un serveur SSH](docs/assets/ssh.webp) | ![Terminal avec un fond dégradé](docs/assets/background.webp) |
 
 ## Raccourcis
 
@@ -81,7 +70,7 @@ npm run dist            # installeur + .exe portable dans dist/
 
 ## Intégration shell
 
-Les blocs de commandes, le dossier courant et les notifications utilisent les séquences OSC 133 / OSC 7 / OSC 9;9 (les mêmes que VS Code et Windows Terminal). Nyx les active automatiquement :
+Les blocs de commandes, le dossier courant et les notifications fonctionnent automatiquement avec ces shells :
 
 | Shell | Blocs | Code de sortie | Dossier |
 |---|---|---|---|
@@ -91,54 +80,31 @@ Les blocs de commandes, le dossier courant et les notifications utilisent les s�
 | Invite de commandes | ✓ | — | ✓ |
 | SSH (machine distante) | — | — | — |
 
-Ton profil PowerShell (oh-my-posh, starship…) et ton `.bashrc` sont chargés normalement. Pour WSL, Nyx lance `bash` ; si tu utilises zsh dans WSL, ajoute dans `settings.json` :
-
-```json
-"profiles": [{ "id": "wsl", "shellIntegration": false }]
-```
+Ton profil PowerShell (oh-my-posh, starship…) et ton `.bashrc` sont chargés normalement.
 
 ## Paramètres
 
-Fichier : `%APPDATA%\Nyx Terminal\settings.json` (Ctrl+,). L'essentiel se règle depuis l'interface, mais tout est modifiable ici :
+Presque tout se règle depuis l'interface : thème, fond, police, raccourci du mode Quake, serveurs SSH, profils. Les réglages avancés sont dans `%APPDATA%\Nyx Terminal\settings.json` (Ctrl+,).
 
-```json
-"quakeHotkey": "F12",          // ou "Ctrl+Alt+T", "" pour désactiver
-"quakeHeight": 0.45,
-"notifyAfterSeconds": 10,
-"restoreSession": true,
-"newTabInCurrentDir": true,
-"commandBlocks": true,
-"ligatures": true,
-"servers": [
-  { "id": "nas", "name": "NAS", "host": "serveur.exemple.com", "user": "admin", "port": 22, "icon": "🗄", "color": "#22d3ee" }
-],
-"profiles": [
-  { "id": "python", "name": "Python", "icon": "🐍", "color": "#ffd43b", "command": "python.exe" }
-]
-```
+> La touche ² ne peut pas servir de raccourci global sous Windows : c'est pour ça que le mode Quake utilise F12 par défaut.
 
-> La touche ² n'est pas utilisable comme raccourci global sous Windows avec Electron : c'est pour ça que le mode Quake utilise F12 par défaut (comme Guake).
+## Confidentialité
 
-## Structure
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
 
-```
-main.js           processus principal : fenêtres, PTY, session, Quake, notifications, serveurs
-preload.js        pont IPC sécurisé
-shell/            scripts d'intégration (PowerShell, bash)
-src/
-  renderer.js     onglets, panneaux, clavier, thèmes, barre d'état
-  blocks.js       blocs de commandes, dossier courant, ligatures, notifications
-  palette.js      palette de commandes
-  customize.js    éditeur de thème, fond, police
-  servers.js      fenêtre « serveur SSH »
-  themes.js       thèmes prédéfinis
-  styles.css      interface
-```
+Nyx Terminal ne collecte aucune donnée et n'envoie rien sur Internet de lui-même : les seules connexions sont celles que tu lances depuis le terminal (ssh, git, npm…) et les liens que tu ouvres avec Ctrl+clic. Pour signaler une faille, voir [SECURITY.md](SECURITY.md).
 
-## Créateur
+## Feuille de route
+
+- **v0.4** (disponible) : panneaux divisés, blocs de commandes, serveurs SSH, mode Quake, notifications, éditeur de thème, fonds d'écran, ligatures, session restaurée.
+- **v0.5** (en préparation) : mises à jour automatiques, « Ouvrir dans Nyx Terminal » dans le clic droit de l'Explorateur, fenêtre de paramètres sans fichier JSON.
+- **v0.6** (prévu) : signature du code, démarrage plus rapide, accès rapides dans la barre des tâches.
+- **Plus tard** : partage de thèmes, historique des commandes amélioré, version macOS et Linux à l'étude.
+
+Une idée ou un bug ? Ouvre une [issue](../../issues).
+
+## Créateur et licence
 
 Nyx Terminal est créé et maintenu par **PIYAS**, alias **Ghosty**.
-
-## Licence
 
 [MIT](LICENSE) © 2026 PIYAS (alias Ghosty)
